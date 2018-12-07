@@ -10,7 +10,7 @@ $(function () {
     $('#codearea').submit(function (submitEvent) {
         $.post('assets/Login.php', $(this).serialize(), function (data) {
             if (data === 'ok') {
-                window.location.href = 'index.php';
+                window.location.href = 'MainPage/main.html';
             } else {
                 alert('Wrong password');
             }
