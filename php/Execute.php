@@ -25,9 +25,9 @@ unlink($filename);
 exec('diff ../Question' . $_POST['question'] . '/expected_output.txt ' . $filename . '.output', $output, $return_val);
 unlink($filename . '.output');
 if ($return_val === 0) {
-    $db = new mysqli('localhost', 'phpmyadmin', 'CS252', 'henry_code');
-    $db->query('insert into score_board_' . $_POST['question'] . ' (`sid`, `uid`, `time`) values ( NULL, ' . $_SESSION['id'] . ', ' . ($end - $start) . ')');
-    $db->close();
+    $database = new mysqli('localhost', 'phpmyadmin', 'CS252', 'henry_code');
+    $database->query('insert into score_board_' . $_POST['question'] . ' (`sid`, `uid`, `time`) values ( NULL, ' . $_SESSION['id'] . ', ' . ($end - $start) . ')');
+    $database->close();
     echo 'ok';
 } else {
     echo json_encode($output);
