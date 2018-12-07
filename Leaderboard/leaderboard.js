@@ -1,6 +1,7 @@
 'use strict';
 $(function () {
     $.get('/php/GetScoreBoard.php', {}, function (data) {
+        console.log(data);
         data = $.parseJSON(data);
         for (let i = 0; i < 3; i++) {
             let len = data[i].length;
