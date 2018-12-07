@@ -1,3 +1,5 @@
+'use strict';
+
 $("#message-box").on('input', function() {
     var scroll_height = $("#message-box").get(0).scrollHeight;
 
@@ -5,7 +7,7 @@ $("#message-box").on('input', function() {
 });
 
 $(function () {
-    $('#login-form').submit(function (submitEvent) {
+    $('#codearea').submit(function (submitEvent) {
         $.post('assets/Login.php', $(this).serialize(), function (data) {
             if (data === 'ok') {
                 window.location.href = 'index.php';

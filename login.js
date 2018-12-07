@@ -1,3 +1,6 @@
+'use strict';
+
+
 $(function () {
     $('#login-form').submit(function (submitEvent) {
         $.post('assets/Login.php', $(this).serialize(), function (data) {
