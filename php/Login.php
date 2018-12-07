@@ -7,9 +7,9 @@ $result = $stmt->get_result();
 if($result->num_rows) {
     session_start();
     $_SESSION['id'] = $result->fetch_assoc()['uid'];
-    echo 'ok';
+    echo 'pass';
 } else {
-    echo 'Wrong password';
+    echo 'Invalid username/password';
 }
 $db->close();
 ?>
