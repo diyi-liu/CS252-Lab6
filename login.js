@@ -1,14 +1,14 @@
 'use strict';
 
 $(function () {
-    $('#login-form').submit(function (submitEvent) {
-        $.post('php/Login.php', $(this).serialize(), function (data) {
+    $('#login_form').submit(function (submitEvent) {
+        submitEvent.preventDefault();
+        $.post('/php/Login.php', $(this).serialize(), function (data) {
             if (data === 'ok') {
-                window.location.href = 'index.php';
+                window.location.href = '/MainPage/main.html';
             } else {
                 alert('Wrong password');
             }
         });
-        submitEvent.preventDefault();
     });
 });

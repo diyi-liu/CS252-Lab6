@@ -4,13 +4,18 @@ $(function () {
             program: $('#codearea').val(),
             question: question
         }, function (data) {
-            let json = $.parseJSON(data);
-            let len = json.length;
-            let text = '';
-            for (let i = 0; i < len; i++) {
-                text += json[i] + "\n";
+            if(data !== 'ok') {
+                let json = $.parseJSON(data);
+                let len = json.length;
+                let text = '';
+                for (let i = 0; i < len; i++) {
+                    text += json[i] + "<br/>";
+                }
+                $('#output').html(text);
+                // console.log(text);
+            } else {
+                $('#output').text('Passed!');
             }
-            console.log(text);
         });
     });
 });
